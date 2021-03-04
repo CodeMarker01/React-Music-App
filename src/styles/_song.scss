@@ -1,0 +1,13 @@
+.song {
+  min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  img {
+    width: 20%;
+    border-radius: 50%;
+    // object-fit: cover;
+  }
+}
