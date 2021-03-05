@@ -5,6 +5,7 @@ function LibrarySong({
   setCurrentSong,
   song,
   songs,
+  setSongs,
   id,
   audioRef,
   isPlaying,
@@ -18,14 +19,32 @@ function LibrarySong({
 
     //check if the song is playing
     if (isPlaying) {
+      //autoplay the song when selected
       audioRef.current.play();
     }
-    //autoplay the song when selected
+
+    const newSongs = songs.map((s) => {
+      if (s.id === song.id) {
+        return {
+          ...s,
+          active: true,
+        };
+      } else {
+        return {
+          ...s,
+          active: false,
+        };
+      }
+    });
+    setSongs(newSongs);
   };
 
   //RETURN
   return (
-    <div onClick={songSelectHandler} className="librarySong">
+    <div
+      onClick={songSelectHandler}
+      className={`librarySong ${song.active ? "selected" : ""}`}
+    >
       <img src={song.cover} alt="" />
 
       <div className="librarySong__description">

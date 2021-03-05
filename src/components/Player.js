@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faPlay,
@@ -29,14 +29,6 @@ function Player({
     return (
       Math.floor(time / 60) + ":" + ("0" + Math.floor(time % 60)).slice(-2)
     );
-  };
-
-  const timeUpdateHandler = (e) => {
-    // khi click, e.target = <audio></audio>
-    // console.log(e.target);
-    const current = e.target.currentTime;
-    const duration = e.target.duration;
-    setSongInfo({ ...songInfo, currentTime: current, duration });
   };
 
   const dragHandler = (e) => {
@@ -79,12 +71,6 @@ function Player({
           className="plaer__forward"
         />
       </div>
-      <audio
-        onTimeUpdate={timeUpdateHandler}
-        onLoadedMetadata={timeUpdateHandler}
-        ref={audioRef}
-        src={currentSong.audio}
-      ></audio>
     </div>
   );
 }
