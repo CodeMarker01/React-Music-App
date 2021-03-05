@@ -8,9 +8,12 @@ function Library({ currentSong, songs, setCurrentSong }) {
       <div className="library__songs">
         {songs.map((s) => (
           <LibrarySong
+            songs={songs}
             song={s}
             currentSong={currentSong}
             setCurrentSong={setCurrentSong}
+            id={s.id}
+            key={s.id}
           />
         ))}
       </div>

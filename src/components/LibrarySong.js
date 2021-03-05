@@ -1,9 +1,12 @@
 import React from "react";
 
-function LibrarySong({ currentSong, song }) {
+function LibrarySong({ currentSong, setCurrentSong, song, songs, id }) {
   //EVENT HANDLER
-  const songSelectHandler = (e) => {
-    console.log(e.target);
+  const songSelectHandler = async () => {
+    // const selectedSong = songs.filter((state) => state.id === id);
+    // setCurrentSong(selectedSong[0]);
+    // * khong can dung filter vi khi click minh da access vao "song" luon roi
+    await setCurrentSong(song);
   };
 
   //RETURN
