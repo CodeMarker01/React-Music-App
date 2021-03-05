@@ -13,10 +13,8 @@ function Player({
   setIsPlaying,
   songInfo,
   setSongInfo,
+  audioRef,
 }) {
-  // REF
-  // grab audio tag
-  const audioRef = useRef(null);
   // EVENT HANDLERS
   const playSongHandler = () => {
     if (!isPlaying) {
