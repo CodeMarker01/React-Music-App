@@ -62,6 +62,26 @@ function chillHop() {
       active: false,
     },
     //ADD MORE HERE
+    {
+      name: "Golden",
+      cover:
+        "https://chillhop.com/wp-content/uploads/2021/02/7f102bdde417f6ead9a120b2b931449e5c12b4da-300x300.jpg",
+      artist: "Aarigod",
+      audio: "https://mp3.chillhop.com/serve.php/?mp3=13005",
+      color: ["#4C642E", "#504329"],
+      id: uuidv4(),
+      active: false,
+    },
+    {
+      name: "She Won't Say",
+      cover:
+        "https://chillhop.com/wp-content/uploads/2020/10/644dedb802e85f3eb700b8b091e729504b680a9c-300x300.jpg",
+      artist: "Psalm Trees, Guillaume Muschalle",
+      audio: "https://mp3.chillhop.com/serve.php/?mp3=10536",
+      color: ["#FDF9ED", "#F3DE67"],
+      id: uuidv4(),
+      active: false,
+    },
   ];
 }
 
