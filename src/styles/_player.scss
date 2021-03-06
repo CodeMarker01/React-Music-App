@@ -13,6 +13,10 @@
   input {
     width: 100%;
     cursor: pointer;
+
+    // turn off style of slider
+    -webkit-appearance: none;
+    background: transparent;
   }
 
   p {
@@ -31,4 +35,15 @@
   svg {
     cursor: pointer;
   }
+}
+
+input[type="range"]:focus {
+  outline: none;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 16px;
+  width: 16px;
+  background: black;
 }

@@ -9,6 +9,10 @@
   overflow: scroll;
   background: white;
   box-shadow: 2px 2px 50px rgb(221, 221, 221);
+
+  transform: translateX(-100%);
+  opacity: 0;
+  transition: all 0.5s ease;
 }
 
 .librarySong {
@@ -61,4 +65,9 @@
 
 .selected {
   background: rgb(194, 208, 253);
+}
+
+.library-active {
+  transform: translateX(0);
+  opacity: 1;
 }

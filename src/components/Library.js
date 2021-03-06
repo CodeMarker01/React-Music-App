@@ -8,9 +8,11 @@ function Library({
   audioRef,
   isPlaying,
   setSongs,
+  libraryStatus,
+  setLibraryStatus,
 }) {
   return (
-    <div className={`library`}>
+    <div className={`library ${libraryStatus ? "library-active" : ""}`}>
       <h2>Library</h2>
       <div className="library__songs">
         {songs.map((s) => (
