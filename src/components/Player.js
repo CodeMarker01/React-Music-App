@@ -88,19 +88,33 @@ function Player({
     playAudio(isPlaying, audioRef);
   };
 
+  // ADD INPUT STYLES
+  const trackAnimate = {
+    transform: `translateX(${songInfo.animationPercentage}%)`,
+  };
+  const activeSong = songs.filter((song) => song.active === true);
   return (
     <div className="player">
       <div className="player__timeControl">
         <p>{getTime(songInfo.currentTime)}</p>
-        <input
-          onChange={dragHandler}
-          type="range"
-          name=""
-          id=""
-          value={songInfo.currentTime}
-          min="0"
-          max={songInfo.duration || 0}
-        />
+        <div
+          style={{
+            background: `linear-gradient(to right, ${currentSong.color[0]}, ${currentSong.color[1]})`,
+          }}
+          className="player__track"
+        >
+          <input
+            onChange={dragHandler}
+            type="range"
+            name=""
+            id=""
+            value={songInfo.currentTime}
+            min="0"
+            max={songInfo.duration || 0}
+          />
+          <div style={trackAnimate} className="player__animateTrack"></div>
+        </div>
+
         {/* songInfo.duration ? getTime(songInfo.duration) : '0:00' */}
         <p>{getTime(songInfo.duration || 0)}</p>
       </div>
