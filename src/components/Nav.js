@@ -11,6 +11,7 @@ function Nav({ libraryStatus, setLibraryStatus }) {
           setLibraryStatus(!libraryStatus);
           // console.log(libraryStatus);
         }}
+        className={libraryStatus ? "library-active" : ""}
       >
         Library
         <FontAwesomeIcon icon={faMusic} />

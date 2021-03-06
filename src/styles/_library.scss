@@ -22,6 +22,8 @@
   padding: 1rem 2rem;
   cursor: pointer;
 
+  transition: background 0.5s ease;
+
   img {
     width: 30%;
   }
@@ -67,7 +69,14 @@
   background: rgb(194, 208, 253);
 }
 
-.library-active {
+.active-library {
   transform: translateX(0);
   opacity: 1;
+}
+
+@media screen and (max-width: 768px) {
+  .library-active {
+    // transform: translateX(100%);
+    width: 100%;
+  }
 }

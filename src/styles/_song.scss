@@ -11,3 +11,11 @@
     // object-fit: cover;
   }
 }
+
+@media screen and (max-width: 768px) {
+  .song {
+    img {
+      width: 60%;
+    }
+  }
+}
