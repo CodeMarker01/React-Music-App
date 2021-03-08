@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faPlay,
@@ -20,10 +20,31 @@ function Player({
   setSongs,
 }) {
   // USE EFFECT
-  useEffect(() => {
-    //todo kiem tra currentSong va thay doi active
+  // useEffect(() => {
+  //   //todo kiem tra currentSong va thay doi active
+  //   const newSongs = songs.map((s) => {
+  //     if (s.id === currentSong.id) {
+  //       return {
+  //         ...s,
+  //         active: true,
+  //       };
+  //     } else {
+  //       return {
+  //         ...s,
+  //         active: false,
+  //       };
+  //     }
+  //   });
+  //   setSongs(newSongs);
+  //   console.log("useEffect from player.js");
+  // }, [currentSong]);
+
+  //todo kiem tra currentSong va thay doi active
+  const activeSongSkipBackHanlder = (
+    nextPrev /**vi tri cua current song */
+  ) => {
     const newSongs = songs.map((s) => {
-      if (s.id === currentSong.id) {
+      if (s.id === nextPrev.id) {
         return {
           ...s,
           active: true,
@@ -35,8 +56,10 @@ function Player({
         };
       }
     });
+
     setSongs(newSongs);
-  }, [currentSong]);
+    console.log("change active use function in player.js");
+  };
 
   // EVENT HANDLERS
   const playSongHandler = () => {
@@ -75,15 +98,18 @@ function Player({
     //todo cach 2 lap lai
     if (direction === "skip-forward") {
       await setCurrentSong(songs[(currentIndex + 1) % songs.length]);
+      // activeSongSkipBackHanlder(songs[(currentIndex + 1) % songs.length]);
     } else if (direction === "skip-back") {
       // if (currentIndex <= 0) currentIndex = songs.length;
       if ((currentIndex - 1) % songs.length === -1) {
         await setCurrentSong(songs[songs.length - 1]);
+        // activeSongSkipBackHanlder(songs[songs.length - 1]);
         if (isPlaying) audioRef.current.play();
         return;
         //neu ko dung return thi state setCurrentSong ben duoi se chay va gay ra scrash
       }
       await setCurrentSong(songs[(currentIndex - 1) % songs.length]);
+      // activeSongSkipBackHanlder(songs[(currentIndex - 1) % songs.length]);
     }
     if (isPlaying) audioRef.current.play();
   };

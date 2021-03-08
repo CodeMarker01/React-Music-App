@@ -47,6 +47,13 @@ input[type="range"]::-webkit-slider-thumb {
   width: 16px;
   // background: black;
 }
+// fix thumb in firefox
+input[type="range"]::-moz-range-thumb {
+  -webkit-appearance: none;
+  background: transparent;
+  border: none;
+}
+// key word: input rang mozilla webkit
 
 .player__track {
   background: lightblue;

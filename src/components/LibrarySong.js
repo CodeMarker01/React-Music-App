@@ -38,6 +38,7 @@ function LibrarySong({
     });
     setSongs(newSongs);
   };
+  console.log("select song");
 
   //RETURN
   return (

@@ -24,7 +24,7 @@ function App() {
   });
   const [libraryStatus, setLibraryStatus] = useState(false);
   // console.log(currentSong.artist);
-  //EVENT HANDLER
+  // EVENT HANDLER
   const timeUpdateHandler = (e) => {
     // khi click, e.target = <audio></audio>
     // console.log(e.target);
@@ -71,9 +71,10 @@ function App() {
         libraryStatus={libraryStatus}
         setLibraryStatus={setLibraryStatus}
       />
+
       <audio
-        onTimeUpdate={timeUpdateHandler}
         onLoadedMetadata={timeUpdateHandler}
+        onTimeUpdate={timeUpdateHandler}
         ref={audioRef}
         src={currentSong.audio}
         onEnded={songEndHandler}
